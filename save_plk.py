@@ -82,14 +82,14 @@ if __name__ == '__main__':
     params = parse_args('test')
 
     loadfile = configs.data_dir[params.dataset] + 'novel.json'
+    print('loading data file from: ', loadfile)
 
-    if params.dataset == 'miniImagenet' or params.dataset == 'CUB':
-        datamgr = SimpleDataManager(84, batch_size=256)
-
+    datamgr = SimpleDataManager(84, batch_size=256)
     novel_loader = datamgr.get_data_loader(loadfile, aug=False)
 
     checkpoint_dir = '%s/checkpoints/%s/%s_%s' % (configs.save_dir, params.dataset, params.model, params.method)
     modelfile = get_resume_file(checkpoint_dir)
+    print('loading model file from: ', checkpoint_dir)
 
     if params.model == 'WideResNet28_10':
         model = wrn_mixup_model.wrn28_10(num_classes=params.num_classes)

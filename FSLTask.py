@@ -10,7 +10,9 @@ import torch
 _datasetFeaturesFiles = {"miniimagenet": "./checkpoints/miniImagenet/WideResNet28_10_S2M2_R/last/output.plk",
                          "cub": "./checkpoints/CUB/WideResNet28_10_S2M2_R/last/output.plk",
                          "cifar": "./checkpoints/cifar/WideResNet28_10_S2M2_R/last/output.plk",
-                         "cross": "./checkpoints/cross/WideResNet28_10_S2M2_R/last/output.plk"}
+                         "cross": "./checkpoints/cross/WideResNet28_10_S2M2_R/last/output.plk",
+                         "custom": "./checkpoints/custom/WideResNet28_10_S2M2_R/last/output.plk",
+                         }
 _cacheDir = "./cache"
 _maxRuns = 10000
 _min_examples = -1
