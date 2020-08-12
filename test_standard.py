@@ -165,7 +165,7 @@ class MAP:
 
         for epoch in range(1, n_epochs + 1):
             if self.verbose:
-                print("----- epoch[{:3d}]  lr_p: {:0.3f}  lr_m: {:0.3f}".format(epoch, self.alpha))
+                print("----- epoch[{:3d}]  lr_p: {:0.3f}".format(epoch, self.alpha))
             self.performEpoch(model, epochInfo=(epoch, n_epochs))
             if (self.progressBar): pb.update()
 
