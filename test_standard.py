@@ -157,6 +157,7 @@ class MAP:
         if self.verbose:
             print("initialisation model accuracy", self.getAccuracy(self.probas))
 
+        pb = None
         if self.progressBar:
             if type(self.progressBar) == bool:
                 pb = tqdm(total=n_epochs)
@@ -167,7 +168,7 @@ class MAP:
             if self.verbose:
                 print("----- epoch[{:3d}]  lr_p: {:0.3f}".format(epoch, self.alpha))
             self.performEpoch(model, epochInfo=(epoch, n_epochs))
-            if self.progressBar:
+            if pb and self.progressBar:
                 pb.update()
 
         # get final accuracy and return it
