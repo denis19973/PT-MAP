@@ -167,7 +167,8 @@ class MAP:
             if self.verbose:
                 print("----- epoch[{:3d}]  lr_p: {:0.3f}".format(epoch, self.alpha))
             self.performEpoch(model, epochInfo=(epoch, n_epochs))
-            if (self.progressBar): pb.update()
+            if self.progressBar:
+                pb.update()
 
         # get final accuracy and return it
         op_xj = model.getProbas()
